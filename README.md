@@ -6,6 +6,15 @@ El estudio compara mediciones reales de señal con modelos teóricos de propagac
 
 ---
 
+## 🌐 Sitio web del proyecto
+
+El proyecto cuenta con una página web interactiva publicada mediante **GitHub Pages**, donde pueden visualizarse los mapas generados durante el análisis de radiopropagación.
+
+### 👉 [Abrir sitio web interactivo](https://josueeeoo-0.github.io/radiopropagation_LTE_COST231_UNMSM/)
+
+En el sitio se encuentran los mapas interactivos desarrollados con Python y Folium, además de accesos al informe, Jupyter Notebook y archivos principales del proyecto.
+
+
 ## 📑 Contenido
 
 Este repositorio incluye:
