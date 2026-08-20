@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LTE Radiopropagation Analysis | UNMSM</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f5f7fa;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           PORTADA
+        ========================================= */
+
+        header {
+            background: linear-gradient(135deg, #101828, #1f3a5f);
+            color: white;
+            text-align: center;
+            padding: 85px 20px 75px;
+        }
+
+        header h1 {
+            font-size: 2.7rem;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            max-width: 760px;
+            margin: auto;
+            color: #d0d5dd;
+            font-size: 1.08rem;
+        }
+
+        .badge {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 7px 15px;
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: #e4e7ec;
+        }
+
+        /* =========================================
+           CONTENIDO
+        ========================================= */
+
+        main {
+            max-width: 1150px;
+            margin: auto;
+            padding: 55px 22px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 12px;
+            font-size: 2rem;
+            color: #101828;
+        }
+
+        .section-description {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 35px;
+            color: #667085;
+        }
+
+        /* =========================================
+           TARJETAS
+        ========================================= */
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e4e7ec;
+            border-radius: 14px;
+            padding: 27px;
+            box-shadow: 0 3px 10px rgba(16,24,40,0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(16,24,40,0.10);
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            margin-bottom: 9px;
+            color: #101828;
+            font-size: 1.15rem;
+        }
+
+        .card p {
+            color: #667085;
+            font-size: 0.94rem;
+            margin-bottom: 20px;
+        }
+
+        /* =========================================
+           BOTONES
+        ========================================= */
+
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            background: #175cd3;
+            color: white;
+            padding: 9px 17px;
+            border-radius: 7px;
+            font-weight: 600;
+            font-size: 0.92rem;
+            transition: background 0.2s;
+        }
+
+        .button:hover {
+            background: #004eeb;
+        }
+
+        .button.green {
+            background: #067647;
+        }
+
+        .button.green:hover {
+            background: #05603a;
+        }
+
+        /* =========================================
+           RECURSOS
+        ========================================= */
+
+        .resources {
+            background: white;
+            border-radius: 14px;
+            border: 1px solid #e4e7ec;
+            padding: 35px;
+        }
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+            background: #101828;
+            color: #98a2b3;
+            text-align: center;
+            padding: 32px 20px;
+            margin-top: 35px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header {
+                padding: 60px 18px;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+<!-- =====================================================
+     PORTADA
+===================================================== -->
+
+<header>
+
+    <h1>📡 LTE Radiopropagation Analysis</h1>
+
+    <p>
+        Análisis experimental de propagación LTE mediante
+        mediciones de campo, modelos COST-231, Python y
+        herramientas de análisis geoespacial.
+    </p>
+
+    <div class="badge">
+        Universidad Nacional Mayor de San Marcos · UNMSM
+    </div>
+
+</header>
+
+
+<main>
+
+<!-- =====================================================
+     MAPAS INTERACTIVOS
+===================================================== -->
+
+<section>
+
+    <h2 class="section-title">
+        🗺️ Mapas interactivos
+    </h2>
+
+    <p class="section-description">
+        Visualizaciones generadas durante el procesamiento
+        y análisis de las mediciones de radiopropagación.
+        Los mapas pueden explorarse directamente desde el navegador.
+    </p>
+
+
+    <div class="grid">
+
+
+        <!-- MAPA 0 -->
+
+        <div class="card">
+
+            <div class="icon">🌍</div>
+
+            <h3>Mapa Base</h3>
+
+            <p>
+                Visualización inicial del área de estudio y
+                ubicación geográfica de las mediciones.
+            </p>
+
+            <a class="button"
+               href="maps/mapa_base.html">
+                Ver mapa
+            </a>
+
+        </div>
+
+
+        <!-- MAPA 1 -->
+
+        <div class="card">
+
+            <div class="icon">📍</div>
+
+            <h3>Mapa 1</h3>
+
+            <p>
+                Visualización interactiva correspondiente
+                al primer procesamiento geoespacial.
+            </p>
+
+            <a class="button"
+               href="maps/mapa_base1.html">
+                Ver mapa
+            </a>
+
+        </div>
+
+
+        <!-- MAPA 2 -->
+
+        <div class="card">
+
+            <div class="icon">📡</div>
+
+            <h3>Mapa 2</h3>
+
+            <p>
+                Representación interactiva de los puntos
+                utilizados durante la campaña de medición.
+            </p>
+
+            <a class="button"
+               href="maps/mapa_base2.html">
+                Ver mapa
+            </a>
+
+        </div>
+
+
+        <!-- MAPA 3 -->
+
+        <div class="card">
+
+            <div class="icon">🛰️</div>
+
+            <h3>Mapa 3</h3>
+
+            <p>
+                Visualización geográfica asociada al
+                análisis de radiopropagación LTE.
+            </p>
+
+            <a class="button"
+               href="maps/mapa_base3.html">
+                Ver mapa
+            </a>
+
+        </div>
+
+
+        <!-- MAPA 4 -->
+
+        <div class="card">
+
+            <div class="icon">📶</div>
+
+            <h3>Mapa 4</h3>
+
+            <p>
+                Vista interactiva del nodo seleccionado
+                dentro del área de estudio.
+            </p>
+
+            <a class="button"
+               href="maps/mapa_base4.html">
+                Ver mapa
+            </a>
+
+        </div>
+
+
+        <!-- MAPA 5 -->
+
+        <div class="card">
+
+            <div class="icon">🛣️</div>
+
+            <h3>Recorrido del nodo</h3>
+
+            <p>
+                Representación del recorrido realizado para
+                las mediciones del nodo seleccionado.
+            </p>
+
+            <a class="button"
+               href="maps/mapa_base5.html">
+                Ver recorrido
+            </a>
+
+        </div>
+
+
+        <!-- MAPA 6 -->
+
+        <div class="card">
+
+            <div class="icon">📡</div>
+
+            <h3>Estación Base</h3>
+
+            <p>
+                Ubicación de la estación base junto al
+                recorrido correspondiente al nodo analizado.
+            </p>
+
+            <a class="button"
+               href="maps/mapa_base6.html">
+                Ver mapa
+            </a>
+
+        </div>
+
+
+        <!-- MAPA 7 -->
+
+        <div class="card">
+
+            <div class="icon">🔵</div>
+
+            <h3>Mapa 7</h3>
+
+            <p>
+                Visualización interactiva con información
+                adicional de las mediciones.
+            </p>
+
+            <a class="button"
+               href="maps/mapa_base7.html">
+                Ver mapa
+            </a>
+
+        </div>
+
+
+        <!-- MAPA 8 -->
+
+        <div class="card">
+
+            <div class="icon">📊</div>
+
+            <h3>Mapa 8</h3>
+
+            <p>
+                Representación espacial de parámetros
+                obtenidos durante la campaña experimental.
+            </p>
+
+            <a class="button"
+               href="maps/mapa_base8.html">
+                Ver mapa
+            </a>
+
+        </div>
+
+
+        <!-- MAPA 9 -->
+
+        <div class="card">
+
+            <div class="icon">📈</div>
+
+            <h3>Mapa 9</h3>
+
+            <p>
+                Visualización del análisis espacial de
+                los resultados experimentales.
+            </p>
+
+            <a class="button"
+               href="maps/mapa_base9.html">
+                Ver mapa
+            </a>
+
+        </div>
+
+
+        <!-- MAPA 10 -->
+
+        <div class="card">
+
+            <div class="icon">🗺️</div>
+
+            <h3>Mapa Final</h3>
+
+            <p>
+                Visualización final generada a partir
+                del procesamiento de las mediciones LTE.
+            </p>
+
+            <a class="button"
+               href="maps/mapa_base10.html">
+                Ver mapa
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     RECURSOS
+===================================================== -->
+
+<section>
+
+    <h2 class="section-title">
+        📚 Recursos del proyecto
+    </h2>
+
+    <p class="section-description">
+        Documentación, código y archivos utilizados durante
+        el desarrollo del proyecto.
+    </p>
+
+
+    <div class="grid">
+
+
+        <div class="card">
+
+            <div class="icon">📄</div>
+
+            <h3>Informe Final</h3>
+
+            <p>
+                Informe académico completo del estudio
+                experimental de radiopropagación LTE.
+            </p>
+
+            <a class="button green"
+               href="informe_final_radiopropagacion.pdf">
+                Ver informe
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🐍</div>
+
+            <h3>Jupyter Notebook</h3>
+
+            <p>
+                Código Python utilizado para procesamiento,
+                análisis, gráficas y generación de mapas.
+            </p>
+
+            <a class="button green"
+               href="https://github.com/Josueeeoo-0/radiopropagation_LTE_COST231_UNMSM/blob/main/analisis_radiopropagacion.ipynb">
+                Ver Notebook
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🗺️</div>
+
+            <h3>Proyecto QGIS</h3>
+
+            <p>
+                Archivos utilizados para el análisis
+                geoespacial y generación de mapas de cobertura.
+            </p>
+
+            <a class="button green"
+               href="https://github.com/Josueeeoo-0/radiopropagation_LTE_COST231_UNMSM/tree/main/qgis_project">
+                Ver archivos
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">💻</div>
+
+            <h3>Repositorio GitHub</h3>
+
+            <p>
+                Código fuente, archivos del proyecto
+                y documentación complementaria.
+            </p>
+
+            <a class="button green"
+               href="https://github.com/Josueeeoo-0/radiopropagation_LTE_COST231_UNMSM">
+                Ver repositorio
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <strong>LTE Radiopropagation Analysis</strong>
+
+    <br>
+
+    Proyecto académico · Radiopropagación
+
+    <br>
+
+    Universidad Nacional Mayor de San Marcos
+
+</footer>
+
+
+</body>
+</html>
