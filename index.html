@@ -24,12 +24,12 @@
             line-height: 1.6;
         }
 
-        /* =========================================
+        /* =========================
            PORTADA
-        ========================================= */
+        ========================== */
 
         header {
-            background: linear-gradient(135deg, #101828, #1f3a5f);
+            background: linear-gradient(135deg, #0f172a, #1e3a5f);
             color: white;
             text-align: center;
             padding: 85px 20px 75px;
@@ -41,25 +41,71 @@
         }
 
         header p {
-            max-width: 760px;
-            margin: auto;
+            max-width: 780px;
+            margin: 0 auto;
             color: #d0d5dd;
             font-size: 1.08rem;
         }
 
         .badge {
             display: inline-block;
-            margin-top: 25px;
-            padding: 7px 15px;
-            border: 1px solid rgba(255,255,255,0.25);
+            margin-top: 24px;
+            padding: 7px 16px;
+            border: 1px solid rgba(255,255,255,0.3);
             border-radius: 30px;
-            font-size: 0.9rem;
             color: #e4e7ec;
+            font-size: 0.9rem;
         }
 
-        /* =========================================
+        .top-buttons {
+            margin-top: 28px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        /* =========================
+           BOTONES
+        ========================== */
+
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            background: #175cd3;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 7px;
+            font-weight: 600;
+            font-size: 0.92rem;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            background: #004eeb;
+            transform: translateY(-1px);
+        }
+
+        .button.secondary {
+            background: transparent;
+            border: 1px solid #98a2b3;
+        }
+
+        .button.secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .button.green {
+            background: #067647;
+        }
+
+        .button.green:hover {
+            background: #05603a;
+        }
+
+        /* =========================
            CONTENIDO
-        ========================================= */
+        ========================== */
 
         main {
             max-width: 1150px;
@@ -68,30 +114,30 @@
         }
 
         section {
-            margin-bottom: 60px;
+            margin-bottom: 65px;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 12px;
-            font-size: 2rem;
             color: #101828;
+            font-size: 2rem;
+            margin-bottom: 10px;
         }
 
         .section-description {
             text-align: center;
-            max-width: 720px;
+            max-width: 760px;
             margin: 0 auto 35px;
             color: #667085;
         }
 
-        /* =========================================
+        /* =========================
            TARJETAS
-        ========================================= */
+        ========================== */
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
             gap: 22px;
         }
 
@@ -115,66 +161,27 @@
         }
 
         .card h3 {
-            margin-bottom: 9px;
             color: #101828;
+            margin-bottom: 9px;
             font-size: 1.15rem;
         }
 
         .card p {
             color: #667085;
-            font-size: 0.94rem;
             margin-bottom: 20px;
+            font-size: 0.94rem;
         }
 
-        /* =========================================
-           BOTONES
-        ========================================= */
-
-        .button {
-            display: inline-block;
-            text-decoration: none;
-            background: #175cd3;
-            color: white;
-            padding: 9px 17px;
-            border-radius: 7px;
-            font-weight: 600;
-            font-size: 0.92rem;
-            transition: background 0.2s;
-        }
-
-        .button:hover {
-            background: #004eeb;
-        }
-
-        .button.green {
-            background: #067647;
-        }
-
-        .button.green:hover {
-            background: #05603a;
-        }
-
-        /* =========================================
-           RECURSOS
-        ========================================= */
-
-        .resources {
-            background: white;
-            border-radius: 14px;
-            border: 1px solid #e4e7ec;
-            padding: 35px;
-        }
-
-        /* =========================================
+        /* =========================
            FOOTER
-        ========================================= */
+        ========================== */
 
         footer {
             background: #101828;
             color: #98a2b3;
             text-align: center;
-            padding: 32px 20px;
-            margin-top: 35px;
+            padding: 35px 20px;
+            margin-top: 40px;
         }
 
         footer strong {
@@ -182,12 +189,12 @@
         }
 
         @media (max-width: 600px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
             header {
                 padding: 60px 18px;
+            }
+
+            header h1 {
+                font-size: 2rem;
             }
 
             .section-title {
@@ -197,20 +204,19 @@
     </style>
 </head>
 
-
 <body>
 
-<!-- =====================================================
+<!-- =========================
      PORTADA
-===================================================== -->
+========================== -->
 
 <header>
 
     <h1>📡 LTE Radiopropagation Analysis</h1>
 
     <p>
-        Análisis experimental de propagación LTE mediante
-        mediciones de campo, modelos COST-231, Python y
+        Análisis experimental de propagación LTE mediante mediciones
+        de campo, modelos COST-231, procesamiento en Python y
         herramientas de análisis geoespacial.
     </p>
 
@@ -218,42 +224,53 @@
         Universidad Nacional Mayor de San Marcos · UNMSM
     </div>
 
+    <div class="top-buttons">
+
+        <a class="button"
+           href="#mapas">
+            Explorar mapas
+        </a>
+
+        <a class="button secondary"
+           href="https://github.com/Josueeeoo-0/radiopropagation_LTE_COST231_UNMSM">
+            Ver repositorio
+        </a>
+
+    </div>
+
 </header>
 
 
 <main>
 
-<!-- =====================================================
-     MAPAS INTERACTIVOS
-===================================================== -->
+<!-- =========================
+     MAPAS
+========================== -->
 
-<section>
+<section id="mapas">
 
     <h2 class="section-title">
         🗺️ Mapas interactivos
     </h2>
 
     <p class="section-description">
-        Visualizaciones generadas durante el procesamiento
-        y análisis de las mediciones de radiopropagación.
-        Los mapas pueden explorarse directamente desde el navegador.
+        Visualizaciones interactivas generadas durante el procesamiento
+        y análisis de las mediciones de radiopropagación LTE.
     </p>
 
 
     <div class="grid">
 
-
-        <!-- MAPA 0 -->
-
+        <!-- MAPA 1 -->
         <div class="card">
 
             <div class="icon">🌍</div>
 
-            <h3>Mapa Base</h3>
+            <h3>Mapa 1</h3>
 
             <p>
-                Visualización inicial del área de estudio y
-                ubicación geográfica de las mediciones.
+                Visualización base del área utilizada durante
+                el análisis geográfico del proyecto.
             </p>
 
             <a class="button"
@@ -264,17 +281,16 @@
         </div>
 
 
-        <!-- MAPA 1 -->
-
+        <!-- MAPA 2 -->
         <div class="card">
 
             <div class="icon">📍</div>
 
-            <h3>Mapa 1</h3>
+            <h3>Mapa 2</h3>
 
             <p>
-                Visualización interactiva correspondiente
-                al primer procesamiento geoespacial.
+                Segunda visualización interactiva generada
+                durante el procesamiento de las mediciones.
             </p>
 
             <a class="button"
@@ -285,17 +301,16 @@
         </div>
 
 
-        <!-- MAPA 2 -->
-
+        <!-- MAPA 3 -->
         <div class="card">
 
             <div class="icon">📡</div>
 
-            <h3>Mapa 2</h3>
+            <h3>Mapa 3</h3>
 
             <p>
-                Representación interactiva de los puntos
-                utilizados durante la campaña de medición.
+                Representación geográfica de información
+                relacionada con los nodos LTE.
             </p>
 
             <a class="button"
@@ -306,17 +321,17 @@
         </div>
 
 
-        <!-- MAPA 3 -->
-
+        <!-- MAPA 4 VISIBLE -->
+        <!-- Internamente utiliza mapa_base3.html -->
         <div class="card">
 
             <div class="icon">🛰️</div>
 
-            <h3>Mapa 3</h3>
+            <h3>Mapa 4</h3>
 
             <p>
-                Visualización geográfica asociada al
-                análisis de radiopropagación LTE.
+                Visualización interactiva correspondiente
+                al análisis de radiopropagación.
             </p>
 
             <a class="button"
@@ -327,41 +342,42 @@
         </div>
 
 
-   
+        <!--
+            mapa_base4.html ELIMINADO INTENCIONALMENTE
+        -->
 
 
-        <!-- MAPA 4 -->
-
+        <!-- MAPA 5 VISIBLE -->
+        <!-- Internamente utiliza mapa_base5.html -->
         <div class="card">
 
             <div class="icon">🛣️</div>
 
-            <h3>Recorrido del nodo</h3>
+            <h3>Mapa 5</h3>
 
             <p>
-                Representación del recorrido realizado para
-                las mediciones del nodo seleccionado.
+                Recorrido correspondiente al nodo seleccionado
+                durante la campaña experimental.
             </p>
 
             <a class="button"
                href="maps/mapa_base5.html">
-                Ver recorrido
+                Ver mapa
             </a>
 
         </div>
 
 
-        <!-- MAPA 5 -->
-
+        <!-- MAPA 6 VISIBLE -->
         <div class="card">
 
-            <div class="icon">📡</div>
+            <div class="icon">📶</div>
 
-            <h3>Estación Base</h3>
+            <h3>Mapa 6</h3>
 
             <p>
-                Ubicación de la estación base junto al
-                recorrido correspondiente al nodo analizado.
+                Visualización de la estación base y elementos
+                asociados al recorrido de medición.
             </p>
 
             <a class="button"
@@ -372,8 +388,7 @@
         </div>
 
 
-        <!-- MAPA 6 -->
-
+        <!-- MAPA 7 -->
         <div class="card">
 
             <div class="icon">🔵</div>
@@ -381,8 +396,8 @@
             <h3>Mapa 7</h3>
 
             <p>
-                Visualización interactiva con información
-                adicional de las mediciones.
+                Representación interactiva de parámetros
+                obtenidos durante las mediciones LTE.
             </p>
 
             <a class="button"
@@ -393,8 +408,7 @@
         </div>
 
 
-        <!-- MAPA 7 -->
-
+        <!-- MAPA 8 -->
         <div class="card">
 
             <div class="icon">📊</div>
@@ -402,8 +416,8 @@
             <h3>Mapa 8</h3>
 
             <p>
-                Representación espacial de parámetros
-                obtenidos durante la campaña experimental.
+                Visualización espacial de los resultados
+                procesados durante el análisis.
             </p>
 
             <a class="button"
@@ -414,8 +428,7 @@
         </div>
 
 
-        <!-- MAPA 8 -->
-
+        <!-- MAPA 9 -->
         <div class="card">
 
             <div class="icon">📈</div>
@@ -423,8 +436,8 @@
             <h3>Mapa 9</h3>
 
             <p>
-                Visualización del análisis espacial de
-                los resultados experimentales.
+                Representación interactiva complementaria
+                del análisis de propagación.
             </p>
 
             <a class="button"
@@ -435,13 +448,12 @@
         </div>
 
 
-        <!-- MAPA 9 -->
-
+        <!-- MAPA 10 -->
         <div class="card">
 
             <div class="icon">🗺️</div>
 
-            <h3>Mapa Final</h3>
+            <h3>Mapa 10</h3>
 
             <p>
                 Visualización final generada a partir
@@ -455,15 +467,14 @@
 
         </div>
 
-
     </div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      RECURSOS
-===================================================== -->
+========================== -->
 
 <section>
 
@@ -472,13 +483,12 @@
     </h2>
 
     <p class="section-description">
-        Documentación, código y archivos utilizados durante
-        el desarrollo del proyecto.
+        Acceso al informe académico, código utilizado,
+        proyecto QGIS y repositorio completo.
     </p>
 
 
     <div class="grid">
-
 
         <div class="card">
 
@@ -487,8 +497,8 @@
             <h3>Informe Final</h3>
 
             <p>
-                Informe académico completo del estudio
-                experimental de radiopropagación LTE.
+                Documento académico completo del proyecto
+                de análisis de radiopropagación LTE.
             </p>
 
             <a class="button green"
@@ -506,8 +516,8 @@
             <h3>Jupyter Notebook</h3>
 
             <p>
-                Código Python utilizado para procesamiento,
-                análisis, gráficas y generación de mapas.
+                Código Python utilizado para los cálculos,
+                procesamiento de datos, gráficas y mapas.
             </p>
 
             <a class="button green"
@@ -520,13 +530,13 @@
 
         <div class="card">
 
-            <div class="icon">🗺️</div>
+            <div class="icon">🌐</div>
 
             <h3>Proyecto QGIS</h3>
 
             <p>
-                Archivos utilizados para el análisis
-                geoespacial y generación de mapas de cobertura.
+                Archivos empleados para el análisis geoespacial
+                y generación de mapas de cobertura.
             </p>
 
             <a class="button green"
@@ -541,11 +551,11 @@
 
             <div class="icon">💻</div>
 
-            <h3>Repositorio GitHub</h3>
+            <h3>GitHub</h3>
 
             <p>
-                Código fuente, archivos del proyecto
-                y documentación complementaria.
+                Repositorio completo con documentación,
+                código y archivos del proyecto.
             </p>
 
             <a class="button green"
@@ -555,18 +565,12 @@
 
         </div>
 
-
     </div>
 
 </section>
 
-
 </main>
 
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
 
 <footer>
 
